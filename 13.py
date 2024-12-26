@@ -5,10 +5,10 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Callb
 from datetime import datetime, timedelta
 
 # Токен бота
-TOKEN = '1111111'
+TOKEN = '7616777337:AAEQQQ3Nx-SldCN6MvFqalwTrlpRtgm1n4M'
 
 # Список ID администраторов
-ADMIN_IDS = [100000000]  # Замените на ваши ID
+ADMIN_IDS = [7749425528]  # Замените на ваши ID
 
 # Настройка логирования
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -66,7 +66,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if subscription_end > datetime.now():
             # Если подписка активна, показываем основное меню с веб-приложением
             keyboard = [
-                [InlineKeyboardButton("▶️ Запустить", web_app={"url": "нгрок"})],
+                [InlineKeyboardButton("▶️ Запустить", web_app={"url": "http://127.0.0.1:5000"})],
                 [InlineKeyboardButton("🆘 Поддержка", callback_data='support')],
                 [InlineKeyboardButton("💰 Прайс", callback_data='price')],
                 [InlineKeyboardButton("🛒 Купить подписку", callback_data='buy_subscription')]
