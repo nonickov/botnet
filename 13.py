@@ -56,7 +56,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if subscription_end > datetime.now():
             # Если подписка активна, показываем основное меню с веб-приложением
             keyboard = [
-                [InlineKeyboardButton("▶️ Запустить", web_app={"url": "http://127.0.0.1:5000"})],
+                [InlineKeyboardButton("▶️ Запустить", web_app={"url": "http://ngrok.com"})],
                 [InlineKeyboardButton("🆘 Поддержка", callback_data='support')],
                 [InlineKeyboardButton("💰 Прайс", callback_data='price')],
                 [InlineKeyboardButton("🛒 Купить подписку", callback_data='buy_subscription')]
@@ -87,7 +87,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     
 
     if query.data == 'support':
-        await query.edit_message_text(text="🆘 Свяжитесь с поддержкой: @TYNDROV")
+        await query.edit_message_text(text="🆘 Свяжитесь с поддержкой: @nonickov")
     elif query.data == 'price':
         await query.edit_message_text(text="💰 Цены на подписку:\n1 день - $2.8\n1 неделя - $7.3\n1 месяц - $13.5\n1 год - $35\nНавсегда - $50")
     elif query.data == 'buy_subscription':
