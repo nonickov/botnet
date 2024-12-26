@@ -47,17 +47,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     # Записываем информацию о пользователе
     cursor.execute('INSERT INTO user_actions (user_id) VALUES (?)', (user_id,))
     conn.commit()
-
-    # Проверка подписки на канал
-    try:
-        user_status = await context.bot.get_chat_member(chat_id='@tmdleg', user_id=user_id)
-        if user_status.status not in ['member', 'administrator', 'creator']:
-            await update.message.reply_text('❌ Пожалуйста, подпишитесь на канал @tmdleg, чтобы пользоваться ботом.')
-            return
-    except Exception as e:
-        await update.message.reply_text(f'⚠️ Ошибка при проверке подписки: {e}')
-        return
-
+ 
     # Проверка наличия подписки
     cursor.execute('SELECT subscription_end FROM users WHERE user_id = ?', (user_id,))
     result = cursor.fetchone()
