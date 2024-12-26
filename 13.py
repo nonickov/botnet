@@ -56,7 +56,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if subscription_end > datetime.now():
             # Если подписка активна, показываем основное меню с веб-приложением
             keyboard = [
-                [InlineKeyboardButton("▶️ Запустить", web_app={"url": "http://ngrok.com"})],
+                [InlineKeyboardButton("▶️ Запустить", web_app={"url": "https://127.0.0.1:5000"})],
                 [InlineKeyboardButton("🆘 Поддержка", callback_data='support')],
                 [InlineKeyboardButton("💰 Прайс", callback_data='price')],
                 [InlineKeyboardButton("🛒 Купить подписку", callback_data='buy_subscription')]
